@@ -24,8 +24,8 @@ export interface SleepEntry {
 }
 
 export interface DailyEntry {
-  date: string;
-  moodRating: 1 | 2 | 3 | 4 | 5 | 6 | 7;
+  date: Date;
+  moodRating: number | null;
   moodDescription?: string;
   journalEntry?: string;
   diet?: DietEntry[];

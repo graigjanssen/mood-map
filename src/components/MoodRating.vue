@@ -27,6 +27,7 @@ const colors = [
   '#4b0'
 ];
 const selectMood = (num: number) => {
+  selectedMood.value = num;
   emit('moodSelected', num);
 };
 </script>
@@ -40,6 +41,11 @@ const selectMood = (num: number) => {
       border-radius: 50%;
       min-height: 52px;
       font-size: 1.6rem;
+      &.selected {
+        font-weight: bold;
+        font-size: 1.9rem;
+        box-shadow: 0 2px 10px rgba(255, 255, 255, .7)
+      }
     }
   }
 </style>
