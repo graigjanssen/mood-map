@@ -35,22 +35,27 @@
 </template>
 
 <script lang="ts" setup>
-import { reactive } from 'vue';
-import { useDate } from 'vuetify';
+import { reactive, defineProps } from 'vue';
+import { useAppStore } from '@/store/app';
 import MoodRating from '@/components/MoodRating.vue';
 import MoodSuggestions from './MoodSuggestions.vue';
 import { DailyEntry } from '@/types';
 
-const adapter = useDate();
-const today = new Date().toISOString();
+const store = useAppStore();
+const props = defineProps({
+  today: {
+    type: Date,
+    required: true,
+  },
+});
 
 const entry = reactive<DailyEntry>({
-  date: adapter.parseISO(today) as string,
+  date: props.today,
   moodRating: null,
   moodDescription: '',
 });
 const submitQuickEntry = () => {
-  console.log('entry to submit: ', entry);
+  store.addEntry({ ...entry }); // using ... to clone entry before storing. Otherwise all entries will be the same
 };
 </script>
 
