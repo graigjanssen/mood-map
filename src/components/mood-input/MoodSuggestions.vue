@@ -23,13 +23,13 @@ const props = defineProps({
 });
 
 const suggestionsMap: { [key: string]: string[] } = {
-  1: ['Hopeless', 'In Crisis', 'Desperate'],
-  2: ['Sad', 'Anxious', 'Angry', 'Struggling', 'Lost'],
-  3: ['Irritable', 'Tired', 'Lonely', 'Bored', 'Been Better'],
-  4: ['Confused', 'Meh', 'Okay', 'Surviving', "Can't Complain"],
-  5: ['Mostly Content', 'Calm', 'Centered', 'Mostly Fine'],
-  6: ['Energized', 'Optimistic', 'Inspired', 'Motivated'],
-  7: ['Joyful', 'Grateful', 'Euphoric', 'Thriving'],
+  1: ['Hopeless', 'In Crisis', 'Desperate', 'Helpless'],
+  2: ['Gloomy', 'Worried', 'Angry', 'Struggling', 'Lost', 'Overwhelmed'],
+  3: ['Resltess', 'Tired', 'Lonely', 'Bored', 'Been Better', 'Meh', 'Discontent'],
+  4: ['Undecided', 'So-so', 'Okay', 'Indifferent', "Can't Complain"],
+  5: ['Mostly Content', 'Calm', 'Centered', 'Steady', 'Satisfied'],
+  6: ['Energized', 'Optimistic', 'Inspired', 'Motivated', 'Upbeat', 'Enthusiastic'],
+  7: ['Joyful', 'Grateful', 'Euphoric', 'Thriving', 'Radiant'],
 };
 
 const activeSuggestions = computed(() => suggestionsMap[props.moodRating]);

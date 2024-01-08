@@ -1,13 +1,14 @@
 <template>
   <div class="content-container">
     <quick-entry :today="today" />
+    <mood-snapshot />
   </div>
 </template>
 
 <script lang="ts" setup>
 import { useDate } from 'vuetify';
-import QuickEntry from '@/components/QuickEntry.vue';
-
+import QuickEntry from '@/components/mood-input/QuickEntry.vue';
+import MoodSnapshot from '@/components/mood-history/MoodSnapshot.vue';
 const adapter = useDate();
 const today = adapter.date(new Date()) as Date;
 

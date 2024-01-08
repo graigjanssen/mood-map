@@ -37,7 +37,7 @@
 <script lang="ts" setup>
 import { reactive, defineProps } from 'vue';
 import { useAppStore } from '@/store/app';
-import MoodRating from '@/components/MoodRating.vue';
+import MoodRating from './MoodRating.vue';
 import MoodSuggestions from './MoodSuggestions.vue';
 import { DailyEntry } from '@/types';
 
