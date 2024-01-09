@@ -20,13 +20,16 @@ const today = adapter.date(new Date()) as Date;
 
 <style lang="scss">
 .content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 95%;
   margin: 0 auto;
 }
 
 @media (min-width: 768px) {
   .content-container {
-    width: 60%;
+    width: 65%;
   }
 }
 </style>

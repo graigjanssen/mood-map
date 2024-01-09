@@ -5,7 +5,7 @@
       :key="num"
       :class="{ selected: selectedMood === num }"
       class="mood-btn"
-      :color="colors[num - 1]"
+      :color="ratingColors[num]"
       @click="selectMood(num)">
       {{ num }}
     </v-btn>
@@ -14,10 +14,11 @@
 
 <script lang="ts" setup>
 import { ref, defineEmits } from 'vue';
+import { ratingColors } from '@/utilities/constants';
 const emit = defineEmits(['moodSelected']);
 const selectedMood = ref<number | null>(null);
-const colors = ['#ac140a', '#9e4c0a', '#967b0a', '#98990a', '#7b960a', '#4c9e0a', '#14ac0a'];
-const selectMood = (num: number) => {
+
+  const selectMood = (num: number) => {
   selectedMood.value = num;
   emit('moodSelected', num);
 };
@@ -32,10 +33,10 @@ const selectMood = (num: number) => {
     border-radius: 8px;
     min-height: 54px;
     font-size: 1.7rem;
-    transition: all .25s;
+    transition: all 0.25s;
     &:hover {
       transform: translateY(-4px) scale(103%);
-      box-shadow: 0 3px 10px rgba(175, 175, 175, .7);
+      box-shadow: 0 3px 10px rgba(175, 175, 175, 0.7);
     }
     &.selected {
       font-weight: bold;
